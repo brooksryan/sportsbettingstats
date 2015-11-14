@@ -1,0 +1,15 @@
+<h1>{{title}}</h1>
+<p>Welcome, {{user}} to {{title}}</p>
+<div class="container-flex">
+    <p>{{details}}</p>
+</div>
+<div class="container-flex">
+    <div id="users">
+        {{#each users}}
+            <div class="container">
+                <a class="btn btn-default" href={{name}} role="button">{{name}}</a>
+                <p>Elo Score is {{eloScore}}</p>
+            </div>
+        {{/each}}
+    </div>
+</div>

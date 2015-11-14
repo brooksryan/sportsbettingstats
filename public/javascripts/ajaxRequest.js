@@ -1,0 +1,1 @@
+$('#userButton').click(console.log('this is a clicked button'));

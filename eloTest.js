@@ -8,8 +8,8 @@ var User = function (name,score){
     };
 };
 
-var Amy = new User('Amy',200);
-var P2 = new User('P2',200);
+var Shane = new User('Shane',361);
+var Brooks = new User('Brooks',230);
 
 function eloRating (user1, user2, user1PointsEarned, user2PointsEarned, next) {
     
@@ -18,6 +18,8 @@ function eloRating (user1, user2, user1PointsEarned, user2PointsEarned, next) {
     
     var expectedUser1Score = (qA/(qA+qB));
     var expectedUser2Score = (qB/(qA+qB));
+    
+    console.log
     
     //K value for score weighting
     var k = 32;
@@ -39,3 +41,18 @@ function eloRating (user1, user2, user1PointsEarned, user2PointsEarned, next) {
     //next(adjustedUserRating,adjustedOpponentRating)
     
 }
+
+eloRating(Shane, Brooks, 4, 3);
+
+var expectedScore = function (user1score,user2score) {
+    var qA = Math.pow(10,(user1score/400));
+    var qB = Math.pow(10,(user2score/400));
+    
+    var expectedUser1Score = (qA/(qA+qB));
+    var expectedUser2Score = (qB/(qA+qB));
+    
+    console.log(expectedUser1Score)
+    console.log(expectedUser2Score)
+};
+
+expectedScore(361,230);

@@ -1,0 +1,21 @@
+{
+  "name": "sports-betting-team-stats",
+  "description": "elo scores etc for sprots",
+  "main": "public/",
+  "authors": [
+    "Brooks Ryan <brooks@elementum.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/brooksryan/sportsbettingstats",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}

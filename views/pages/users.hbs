@@ -1,15 +1,38 @@
 <h1>{{title}}</h1>
-<p>Welcome, {{user}} to {{title}}</p>
-<div class="container-flex">
+<div class="container">
     <p>{{details}}</p>
 </div>
-<div class="container-flex">
-    <div id="users">
-        {{#each users}}
-            <div class="container">
-                <a class="btn btn-default" href={{name}} role="button">{{name}}</a>
-                <p>Elo Score is {{eloScore}}</p>
-            </div>
-        {{/each}}
+
+    {{#each users}}
+    <div class="col-md-4 col-lg-3">
+        <h2>{{name}}</h2>
+        <h4>Has an eloScore of {{eloScore}}</h4>
+     </div>
+    {{/each}}
+
+
+<div class="row">
+    <div class="container">
+        <h3>Who won the last game?</h3>
     </div>
-</div>
+    <div class="container">
+        <div id="users">
+            <div class="container">
+                <form action="/games/gameResult" method="post">
+                <paper-dropdown-menu label="Your favourite pastry">
+                <select name="win">
+                {{#each users}}
+                    <option value={{name}}>{{name}} - score: {{eloScore}}</option>
+                {{/each}}
+                </select>
+                <select name="loss">
+                {{#each users}}
+                    <option value={{name}}>{{name}} - score: {{eloScore}}</option>
+                {{/each}}
+                </select>
+                <input type="submit" value="Submit">
+                </form>
+            </div> {{!--end form container--}}
+        </div> {{!--end user div--}}
+    </div>{{!-- end container-flex --}}
+</div> {{!-- end create a game row--}}

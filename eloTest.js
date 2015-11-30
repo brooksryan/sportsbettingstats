@@ -19,8 +19,6 @@ function eloRating (user1, user2, user1PointsEarned, user2PointsEarned, next) {
     var expectedUser1Score = (qA/(qA+qB));
     var expectedUser2Score = (qB/(qA+qB));
     
-    console.log
-    
     //K value for score weighting
     var k = 32;
     
@@ -42,7 +40,7 @@ function eloRating (user1, user2, user1PointsEarned, user2PointsEarned, next) {
     
 }
 
-eloRating(Shane, Brooks, 4, 3);
+//eloRating(Shane, Brooks, 4, 3);
 
 var expectedScore = function (user1score,user2score) {
     var qA = Math.pow(10,(user1score/400));
@@ -55,4 +53,4 @@ var expectedScore = function (user1score,user2score) {
     console.log(expectedUser2Score)
 };
 
-expectedScore(361,230);
+expectedScore(97,91);

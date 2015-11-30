@@ -1,3 +1,9 @@
+@import "../bower_components/mui/src/sass/mui/colors";
+
+body {
+  background-color: mui-color('purple', '700');
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -5,4 +11,13 @@ body {
 
 a {
   color: #00B7FF;
+}
+
+paper-button.fancy {
+  background: green;
+  color: yellow;
+}
+
+paper-button.fancy:hover {
+  background: lime;
 }

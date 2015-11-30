@@ -22,15 +22,23 @@ router.get('/newUser/:newUserName', function(req, res, next) {
 });
 
 router.get('/allUsers',function(req, res, next) {
-  getUserService.findAllUsers(function(allUsers){
+  getUserService.findAllActive(function(allUsers){
     console.log('Router level, I found all of the users');
     console.log(allUsers);
     res.render('pages/users', { 
-          title: 'this user does not exist',
+          title: 'Welcome to Rocket League ELO',
           users: allUsers
       });
   });
 });
+
+router.post('/submitWin',function(req, res){
+    console.log(req.body);
+    res.render('pages/users', { 
+          title: 'this user does not exist',
+    });
+});
+
 
 router.get('/:userId', function(req, res, next) {
     var requestName = req.params.userId;
@@ -43,10 +51,11 @@ router.get('/:userId', function(req, res, next) {
           title: 'User Page',
           user: thisUserName
       });
-      } res.render('pages/users', { 
+      } else {res.render('pages/users', { 
           title: 'this user does not exist',
           user: thisUserName
-      });
+          });
+      }
     });
 });
 

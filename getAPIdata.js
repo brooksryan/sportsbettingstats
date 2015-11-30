@@ -9,9 +9,14 @@ var request = require("request");
 //                      The httpResonse fromthe probasketball API and the body
 //                      of the request in JSON
                         
-var returnData  = function(chartType,thisFormData,next){   
-    request.post(
-        {url:'http://api.probasketballapi.com/'+chartType, formData: thisFormData}, function optionalCallback (err, httpResponse, body) {
+var returnData  = function(next){   
+    request.get(
+        {url:'https://portsdb-jsrv.rhcloud.com//api/ports?ordering=status,max_dwt', 
+        headers:{
+            'Content-Type': 'application/json',
+            "Authorization":'Token 93798b5328842049e6069c6353f2aa43df62eedb'
+        }
+        }, function optionalCallback (err, httpResponse, body) {
             if (err) {
                 return console.error('upload failed:', err);
             } 
@@ -22,12 +27,12 @@ var returnData  = function(chartType,thisFormData,next){
 
 // BETFAIR REQUEST API TEST
 
-var options = {
+/*var options = {
     
     header:{
         "X-Application":'7Bm3j3wkRxTfF3Cx'
     }
-};
+};*/
 
 var betFairExchangeRequest  = function(chartType,thisFormData,next){   
     request.post(
@@ -71,9 +76,9 @@ function logArrayElements (element, index, array) {
  
 
 
-/*returnData('game',formData,function (y,z){
-    var parsed = JSON.parse(z);
-    parsed.forEach(logArrayElements);
+/*returnData(function (y,z){
+    console.log(z);
+    //parsed.forEach(logArrayElements);
 });*/
 
             //var parsed = JSON.parse(body)

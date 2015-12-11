@@ -22,6 +22,7 @@ router.get('/newUser/:newUserName', function(req, res, next) {
 });
 
 router.get('/allUsers',function(req, res, next) {
+  debugger
   getUserService.findAllActive(function(allUsers){
     console.log('Router level, I found all of the users');
     console.log(allUsers);

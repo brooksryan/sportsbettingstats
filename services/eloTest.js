@@ -2,6 +2,9 @@ var userSchema = require('../models/user');
 var User = userSchema.User;
 var getUserService = require('../services/getUserService');
 
+
+// function (winner Elo, Loser Elo, Winner Score, Loser Score, callback ([new winner elo, new loser elo]) 
+// 
 exports.eloRating = function (winElo, lossElo, winPoints, lossPoints, next) {
     
     console.log('there are the parameters:', winElo,lossElo,winPoints,lossPoints)
